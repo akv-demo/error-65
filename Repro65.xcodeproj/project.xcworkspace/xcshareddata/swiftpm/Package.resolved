@@ -5,8 +5,7 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/akv-demo/spm-greet",
       "state" : {
-        "branch" : "main",
-        "revision" : "2144453d893da204d6254e216a647a40e3626c50"
+        "revision" : "18b3fbc5c3aa69b967f500820c7319a1f31cd097"
       }
     }
   ],
