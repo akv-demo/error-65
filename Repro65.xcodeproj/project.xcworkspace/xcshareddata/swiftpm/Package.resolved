@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "spm-greet",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/akv-demo/spm-greet",
+      "state" : {
+        "branch" : "main",
+        "revision" : "2144453d893da204d6254e216a647a40e3626c50"
+      }
+    }
+  ],
+  "version" : 2
+}

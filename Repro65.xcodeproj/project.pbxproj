@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		415E58F32973410C000FEB0E /* spm-greet in Frameworks */ = {isa = PBXBuildFile; productRef = 415E58F22973410C000FEB0E /* spm-greet */; };
 		712AE9CB2970C0380009DA6C /* Repro65App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712AE9CA2970C0380009DA6C /* Repro65App.swift */; };
 		712AE9CD2970C0380009DA6C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712AE9CC2970C0380009DA6C /* ContentView.swift */; };
 		712AE9CF2970C03B0009DA6C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 712AE9CE2970C03B0009DA6C /* Assets.xcassets */; };
@@ -51,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				415E58F32973410C000FEB0E /* spm-greet in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,6 +145,9 @@
 			dependencies = (
 			);
 			name = Repro65;
+			packageProductDependencies = (
+				415E58F22973410C000FEB0E /* spm-greet */,
+			);
 			productName = Repro65;
 			productReference = 712AE9C72970C0380009DA6C /* Repro65.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +220,9 @@
 				Base,
 			);
 			mainGroup = 712AE9BE2970C0380009DA6C;
+			packageReferences = (
+				415E58F12973410C000FEB0E /* XCRemoteSwiftPackageReference "spm-greet" */,
+			);
 			productRefGroup = 712AE9C82970C0380009DA6C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -583,6 +591,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		415E58F12973410C000FEB0E /* XCRemoteSwiftPackageReference "spm-greet" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/akv-demo/spm-greet";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		415E58F22973410C000FEB0E /* spm-greet */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 415E58F12973410C000FEB0E /* XCRemoteSwiftPackageReference "spm-greet" */;
+			productName = "spm-greet";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 712AE9BF2970C0380009DA6C /* Project object */;
 }

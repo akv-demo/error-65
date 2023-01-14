@@ -6,10 +6,11 @@
 //
 
 import SwiftUI
+import spm_greet
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
+        Text(spm_greet().getGreet() + "Hello, world!")
             .padding()
     }
 }
