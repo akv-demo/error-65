@@ -48,5 +48,6 @@ jobs:
           cp $PP_PATH ~/Library/MobileDevice/Provisioning\ Profiles
 
       - run: |
-          xcode-select -s /Applications/Xcode_${{ matrix.xcode }}.app
+          sudo xcode-select -s /Applications/Xcode_${{ matrix.xcode }}.app
+          xcode-select -p
           # fastlane build
