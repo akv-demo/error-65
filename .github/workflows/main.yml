@@ -44,5 +44,5 @@ jobs:
           cp $PP_PATH ~/Library/MobileDevice/Provisioning\ Profiles
 
       - run: |
-          ls -la /Application
+          ls -la /Applications
           # fastlane build
