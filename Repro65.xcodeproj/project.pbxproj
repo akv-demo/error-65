@@ -597,8 +597,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/akv-demo/spm-greet";
 			requirement = {
-				kind = revision;
-				revision = 18b3fbc5c3aa69b967f500820c7319a1f31cd097;
+				branch = main;
+				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

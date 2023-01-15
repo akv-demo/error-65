@@ -5,7 +5,17 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/akv-demo/spm-greet",
       "state" : {
-        "revision" : "18b3fbc5c3aa69b967f500820c7319a1f31cd097"
+        "branch" : "main",
+        "revision" : "bfeb2b6509642904c3ecda1a6df7a00bc2b0f75a"
+      }
+    },
+    {
+      "identity" : "spm-greet2",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/akv-demo/spm-greet2",
+      "state" : {
+        "branch" : "main",
+        "revision" : "6316ccee00165a969f50b01d3dea22cd9a791934"
       }
     }
   ],

@@ -10,7 +10,7 @@ import spm_greet
 
 struct ContentView: View {
     var body: some View {
-        Text(spm_greet().getGreet() + "Hello, world!")
+        Text(spm_greet().getGreet22() + "Hello, world!")
             .padding()
     }
 }
