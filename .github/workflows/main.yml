@@ -6,8 +6,9 @@ jobs:
   build:
     strategy:
       matrix:
+        xcode: ["14.3"]
         # xcode: ["13.4", "14.2"]
-        xcode: ["12.5.1"]
+        #xcode: ["12.5.1"]
     env:
       DEST: platform=iOS Simulator,name=Test86
 
