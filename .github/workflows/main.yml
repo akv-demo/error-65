@@ -66,4 +66,5 @@ jobs:
           xcodebuild build -workspace Repro65.xcworkspace -scheme "Repro65" -destination 'generic/platform=iOS Simulator'
 
       - run: |
+          xcrun simctl list
           xcodebuild test -workspace Repro65.xcworkspace -scheme "Repro65" -destination "$DEST"
