@@ -9,7 +9,7 @@ jobs:
         # xcode: ["13.4", "14.2"]
         xcode: ["12.5.1"]
     env:
-      DEST: iPhone 8,OS=14.5
+      DEST: platform=iOS Simulator,name=Test86
 
     runs-on: macos-11
     steps:
@@ -54,7 +54,9 @@ jobs:
           sudo xcode-select -s /Applications/Xcode_${{ matrix.xcode }}.app
           xcode-select -p
           security find-identity -v -p codesigning
-          xcodebuild clean -workspace Repro65.xcworkspace -scheme "Repro65" -destination "platform=sss"
+
+      - run: |
+          xcrun simctl create Test8 'iPhone 8'
 
       - run: |
           xcodebuild clean -workspace Repro65.xcworkspace -scheme "Repro65" -destination "platform=iOS $DEST"
