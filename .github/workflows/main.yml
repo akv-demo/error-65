@@ -52,7 +52,8 @@ jobs:
           sudo xcode-select -s /Applications/Xcode_${{ matrix.xcode }}.app
           xcode-select -p
           security find-identity -v -p codesigning
-          xcodebuild clean -workspace Repro65.xcworkspace -scheme "Repro65" -destination "platform=iOS Simulator,name=Test86"
-          xcodebuild build -workspace Repro65.xcworkspace -scheme "Repro65" -destination "platform=iOS Simulator,name=Test86"
-          xcodebuild test -workspace Repro65.xcworkspace -scheme "Repro65" -destination "platform=iOS Simulator,name=Test86"
+          export DEST="iPhone 8,OS=14.5"
+          xcodebuild clean -workspace Repro65.xcworkspace -scheme "Repro65" -destination "platform=iOS $DEST"
+          xcodebuild build -workspace Repro65.xcworkspace -scheme "Repro65" -destination "platform=iOS $DEST"
+          xcodebuild test -workspace Repro65.xcworkspace -scheme "Repro65" -destination "platform=iOS $DEST"
         name: Build
