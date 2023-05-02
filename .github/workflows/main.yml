@@ -51,4 +51,7 @@ jobs:
           sudo xcode-select -s /Applications/Xcode_${{ matrix.xcode }}.app
           xcode-select -p
           security find-identity -v -p codesigning
-          fastlane build --verbose
+          xcodebuild clean -workspace Repro65.xcworkspace -scheme "Repro65" -destination "platform=iOS Simulator,name=Test86"
+          xcodebuild build -workspace Repro65.xcworkspace -scheme "Repro65" -destination "platform=iOS Simulator,name=Test86"
+          xcodebuild test -workspace Repro65.xcworkspace -scheme "Repro65" -destination "platform=iOS Simulator,name=Test86"
+        name: Build
