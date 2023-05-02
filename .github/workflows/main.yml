@@ -6,9 +6,10 @@ jobs:
   build:
     strategy:
       matrix:
-        xcode: ["13.4", "14.2"]
+        # xcode: ["13.4", "14.2"]
+        xcode: ["12.5.1"]
 
-    runs-on: macos-latest
+    runs-on: macos-11
     steps:
       - uses: actions/checkout@v2
 
