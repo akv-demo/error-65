@@ -10,7 +10,8 @@ jobs:
         # xcode: ["13.4", "14.2"]
         #xcode: ["12.5.1"]
     env:
-      DEST: platform=iOS Simulator,name=Test86
+      #DEST: platform=iOS Simulator,name=Test86
+      DEST: platform=iOS,name=Test86
 
     runs-on: macos-latest
     steps:
@@ -60,11 +61,14 @@ jobs:
           xcrun simctl create Test8 'iPhone 8'
 
       - run: |
-          xcodebuild clean -workspace Repro65.xcworkspace -scheme "Repro65" -destination 'generic/platform=iOS Simulator'
+        #xcodebuild clean -workspace Repro65.xcworkspace -scheme "Repro65" -destination 'generic/platform=iOS Simulator'
+          xcodebuild clean -workspace Repro65.xcworkspace -scheme "Repro65"
 
       - run: |
-          xcodebuild build -workspace Repro65.xcworkspace -scheme "Repro65" -destination 'generic/platform=iOS Simulator'
+        #xcodebuild build -workspace Repro65.xcworkspace -scheme "Repro65" -destination 'generic/platform=iOS Simulator'
+          xcodebuild build -workspace Repro65.xcworkspace -scheme "Repro65"
 
       - run: |
           xcrun simctl list
-          xcodebuild test -workspace Repro65.xcworkspace -scheme "Repro65" -destination "$DEST"
+          xcodebuild test -workspace Repro65.xcworkspace -scheme "Repro65"
+          #xcodebuild test -workspace Repro65.xcworkspace -scheme "Repro65" -destination "$DEST"
