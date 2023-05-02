@@ -8,6 +8,8 @@ jobs:
       matrix:
         # xcode: ["13.4", "14.2"]
         xcode: ["12.5.1"]
+    env:
+      DEST: iPhone 8,OS=14.5
 
     runs-on: macos-11
     steps:
@@ -52,8 +54,13 @@ jobs:
           sudo xcode-select -s /Applications/Xcode_${{ matrix.xcode }}.app
           xcode-select -p
           security find-identity -v -p codesigning
-          export DEST="iPhone 8,OS=14.5"
+          xcodebuild clean -workspace Repro65.xcworkspace -scheme "Repro65" -destination "platform=sss"
+
+      - run: |
           xcodebuild clean -workspace Repro65.xcworkspace -scheme "Repro65" -destination "platform=iOS $DEST"
+
+      - run: |
           xcodebuild build -workspace Repro65.xcworkspace -scheme "Repro65" -destination "platform=iOS $DEST"
+
+      - run: |
           xcodebuild test -workspace Repro65.xcworkspace -scheme "Repro65" -destination "platform=iOS $DEST"
-        name: Build
