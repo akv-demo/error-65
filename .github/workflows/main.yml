@@ -60,10 +60,10 @@ jobs:
           xcrun simctl create Test8 'iPhone 8'
 
       - run: |
-          xcodebuild clean -workspace Repro65.xcworkspace -scheme "Repro65" -destination "$DEST"
+          xcodebuild clean -workspace Repro65.xcworkspace -scheme "Repro65" -destination -destination generic/platform="iOS Simulator"
 
       - run: |
-          xcodebuild build -workspace Repro65.xcworkspace -scheme "Repro65" -destination "$DEST"
+          xcodebuild build -workspace Repro65.xcworkspace -scheme "Repro65" -destination generic/platform="iOS Simulator"
 
       - run: |
           xcodebuild test -workspace Repro65.xcworkspace -scheme "Repro65" -destination "$DEST"
