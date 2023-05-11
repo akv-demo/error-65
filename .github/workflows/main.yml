@@ -72,5 +72,15 @@ jobs:
 
       - run: |
           xcrun simctl list
-          xcodebuild test -workspace Repro65.xcworkspace -scheme "Repro65" -destination "$DEST"
+          nohup xcodebuild test -workspace Repro65.xcworkspace -scheme "Repro65" -destination "$DEST"&
+          #print swap usage for 10 minutes every 5 secs
+          i=1;while test $i -lt 120;do
+            if pgrep com.apple.CoreSimulator.CoreSimulatorService;then
+              sysctl vm.swapusage;sleep 5;i=$((i + 1));
+            else
+              break
+            fi
+          done
+          test -f nohup.out && cat nohup.out
+          killall -9 com.apple.CoreSimulator.CoreSimulatorService
         name: 'Test'
