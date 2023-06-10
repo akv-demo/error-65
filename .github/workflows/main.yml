@@ -24,6 +24,7 @@ jobs:
           BUILD_PROVISION_PROFILE_BASE64: ${{ secrets.PROVISION_PROFILE }}
           KEYCHAIN_PASSWORD: ${{ secrets.KEYCHAIN_PASSWORD }}
         run: |
+          sysctl vm.swapusage
           # create variables
           CERTIFICATE_PATH=$RUNNER_TEMP/build_certificate.p12
           PP_PATH=$RUNNER_TEMP/build_pp.mobileprovision
@@ -53,24 +54,29 @@ jobs:
           cp $PP_PATH ~/Library/MobileDevice/Provisioning\ Profiles
 
       - run: |
+          sysctl vm.swapusage
           sudo xcode-select -s /Applications/Xcode_${{ matrix.xcode }}.app
           xcode-select -p
           security find-identity -v -p codesigning
 
       - run: |
+          sysctl vm.swapusage
           xcrun simctl create Test8 'iPhone 8'
 
       - run: |
+          sysctl vm.swapusage
           xcodebuild clean -workspace Repro65.xcworkspace -scheme "Repro65"
           #xcodebuild clean -workspace Repro65.xcworkspace -scheme "Repro65" -destination 'generic/platform=iOS Simulator'
         name: 'Clean'
 
       - run: |
+          sysctl vm.swapusage
           xcodebuild build -workspace Repro65.xcworkspace -scheme "Repro65" -destination "$DEST"
           #xcodebuild build -workspace Repro65.xcworkspace -scheme "Repro65" -destination 'generic/platform=iOS Simulator'
         name: 'Build'
 
       - run: |
+          sysctl vm.swapusage
           xcrun simctl list
           nohup xcodebuild test -workspace Repro65.xcworkspace -scheme "Repro65" -destination "$DEST"&
           #print swap usage for 10 minutes every 5 secs
